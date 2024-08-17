@@ -16,7 +16,7 @@ DEBIAN_FRONTEND=noninteractive \
     gawk git git-lfs gnupg gperf \
     htop imagemagick libcap libelf \
     libllvm julia-llvm libgmp libtool \
-    libmpc libmpfr pngcrush gh \             
+    libmpc libmpfr pngcrush gh \
     libxml2 libxml2-utils lzop \
     maven ncftp ncurses patch patchelf \
     pkg-config android-sdk-build-tools \
