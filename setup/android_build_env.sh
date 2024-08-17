@@ -35,10 +35,11 @@ DEBIAN_FRONTEND=noninteractive \
     apt-get install \
     adb autoconf automake axel bc bison build-essential \
     ccache clang cmake curl expat fastboot flex g++ \
-    gawk gcc git git-lfs gnupg gperf \
-    htop imagemagick lib32readline-dev 
-lib32z1-dev libelf-dev libc6-dev libcap-dev \
-    libexpat1-dev libgmp-dev '^liblz4-.*' '^liblzma.*' liblz4-tool libmpc-dev libmpfr-dev libncurses5-dev \
+    gawk git git-lfs gnupg gperf \
+    htop imagemagick lib32readline-dev \
+    lib32z1-dev libelf-dev libc6-dev \
+    libcap-dev libllvm julia-llvm \
+    libexpat1-dev libgmp-dev '^liblz4-.*'         '^liblzma.*' liblz4-tool libmpc-dev   libmpfr-dev libncurses5-dev \
     libsdl1.2-dev libssl-dev libtool libxml2 libxml2-utils '^lzma.*' lzop \
     maven ncftp ncurses-dev patch patchelf pkg-config pngcrush \
     pngquant re2c rsync schedtool squashfs-tools subversion \
@@ -46,8 +47,8 @@ lib32z1-dev libelf-dev libc6-dev libcap-dev \
     libxml-simple-perl libswitch-perl apt-utils \
     ${PACKAGES} -y
 
-wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.4-2_aarch64.deb && dpkg -i ./libtinfo5_6.4-2_aarch64.deb && rm -f libtinfo5_6.4-2_aarch64.deb
-wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libncurses5_6.4-2_aarch64.deb && dpkg -i ./libncurses5_6.4-2_aarch64.deb && rm -f libncurses5_6.4-2_aarch64.deb
+wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.4-2_arm64.deb && dpkg -i ./libtinfo5_6.4-2_arm64.deb && rm -f libtinfo5_6.4-2_arm64.deb
+wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libncurses5_6.4-2_arm64.deb && dpkg -i ./libncurses5_6.4-2_arm64.deb && rm -f libncurses5_6.4-2_arm64.deb
 
 echo -e "Installing GitHub CLI"
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
