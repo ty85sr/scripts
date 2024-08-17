@@ -76,3 +76,5 @@ sudo chmod a+rx /usr/local/bin/repo
 
 git config --global user.email ty85sr@gmail.com
 git config --global user.name ty85sr
+
+sudo apt install figlet fortune byobu mosh -y
