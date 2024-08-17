@@ -5,7 +5,7 @@ Firstly, install [git](https://git-scm.com/book/en/v2/Getting-Started-Installing
 Then, run these commands
 
 ```bash
-git clone https://github.com/ty85sr/scripts
+git clone https://github.com/ty85sr/scripts -b ty85sr-patch-1
 cd scripts
 bash setup/android_build_env.sh
 bash setup/install_android_sdk.sh
