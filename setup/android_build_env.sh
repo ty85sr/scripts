@@ -4,32 +4,9 @@
 # Copyright (C) 2018 Akhil Narang
 # SPDX-License-Identifier: GPL-3.0-only
 
-# Script to setup an AOSP Build environment on Ubuntu and Linux Mint
+# Script to setup an AOSP Build environment on Termux
 
-LATEST_MAKE_VERSION="4.3"
-UBUNTU_16_PACKAGES="libesd0-dev"
-UBUNTU_20_PACKAGES="libncurses5 curl python-is-python3"
-DEBIAN_10_PACKAGES="libncurses5"
-DEBIAN_11_PACKAGES="libncurses5"
-PACKAGES=""
-
-apt install software-properties-common -y
-apt update
-
-# Install lsb-core packages
-#sudo apt install lsb-core -y
-
-LSB_RELEASE="$(lsb_release -d | cut -d ':' -f 2 | sed -e 's/^[[:space:]]*//')"
-
-if [[ ${LSB_RELEASE} =~ "Mint 18" || ${LSB_RELEASE} =~ "Ubuntu 16" ]]; then
-    PACKAGES="${UBUNTU_16_PACKAGES}"
-elif [[ ${LSB_RELEASE} =~ "Ubuntu 20" || ${LSB_RELEASE} =~ "Ubuntu 21" || ${LSB_RELEASE} =~ "Ubuntu 22" || ${LSB_RELEASE} =~ 'Pop!_OS 2' ]]; then
-    PACKAGES="${UBUNTU_20_PACKAGES}"
-elif [[ ${LSB_RELEASE} =~ "Debian GNU/Linux 10" ]]; then
-    PACKAGES="${DEBIAN_10_PACKAGES}"
-elif [[ ${LSB_RELEASE} =~ "Debian GNU/Linux 11" ]]; then
-    PACKAGES="${DEBIAN_11_PACKAGES}"
-fi
+apt update && apt upgrade -y
 
 DEBIAN_FRONTEND=noninteractive \
     apt-get install \
