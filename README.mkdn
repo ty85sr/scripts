@@ -6,7 +6,7 @@ Firstly, install [git](https://git-scm.com/book/en/v2/Getting-Started-Installing
 Then, run these commands
 
 ```bash
-$ git clone https://github.com/akhilnarang/scripts
+$ git clone https://github.com/ty85sr/scripts
 $ cd scripts
 $ bash setup/<name of script>
 ```
@@ -39,3 +39,6 @@ random-html -> generates an index.html with a table with the list of files in cu
 rr -> some scripts for ResurrectionRemix.
 
 setup -> setup Android Build Environment / Android SDK.
+
+
+THANK YOU akhilnarang for starting point for my personal preferences 
