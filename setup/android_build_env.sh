@@ -13,8 +13,8 @@ DEBIAN_10_PACKAGES="libncurses5"
 DEBIAN_11_PACKAGES="libncurses5"
 PACKAGES=""
 
-sudo apt install software-properties-common -y
-sudo apt update
+apt install software-properties-common -y
+apt update
 
 # Install lsb-core packages
 #sudo apt install lsb-core -y
@@ -31,7 +31,7 @@ elif [[ ${LSB_RELEASE} =~ "Debian GNU/Linux 11" ]]; then
     PACKAGES="${DEBIAN_11_PACKAGES}"
 fi
 
-sudo DEBIAN_FRONTEND=noninteractive \
+DEBIAN_FRONTEND=noninteractive \
     apt-get install \
     adb autoconf automake axel bc bison build-essential \
     ccache clang cmake curl expat fastboot flex g++ \
@@ -46,15 +46,15 @@ lib32z1-dev libelf-dev libc6-dev libcap-dev \
     libxml-simple-perl libswitch-perl apt-utils \
     ${PACKAGES} -y
 
-wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.4-2_amd64.deb && sudo dpkg -i libtinfo5_6.4-2_amd64.deb && rm -f libtinfo5_6.4-2_amd64.deb
-wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libncurses5_6.4-2_amd64.deb && sudo dpkg -i libncurses5_6.4-2_amd64.deb && rm -f libncurses5_6.4-2_amd64.deb
+wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.4-2_aarch64.deb && dpkg -i ./libtinfo5_6.4-2_aarch64.deb && rm -f libtinfo5_6.4-2_aarch64.deb
+wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libncurses5_6.4-2_aarch64.deb && dpkg -i ./libncurses5_6.4-2_aarch64.deb && rm -f libncurses5_6.4-2_aarch64.deb
 
 echo -e "Installing GitHub CLI"
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
 sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-sudo apt update
-sudo apt install -y gh
+apt update
+apt install -y gh
 
 echo -e "Setting up udev rules for adb!"
 sudo curl --create-dirs -L -o /etc/udev/rules.d/51-android.rules -O -L https://raw.githubusercontent.com/M0Rf30/android-udev-rules/master/51-android.rules
@@ -77,4 +77,4 @@ sudo chmod a+rx /usr/local/bin/repo
 git config --global user.email ty85sr@gmail.com
 git config --global user.name ty85sr
 
-sudo apt install figlet fortune byobu mosh -y
+apt install figlet fortune byobu mosh -y
